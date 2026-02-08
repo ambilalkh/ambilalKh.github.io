@@ -7,10 +7,12 @@
   --border:rgba(255,255,255,.08);
 }
 
+/* ---------- Base ---------- */
 *{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  font-family: ui-sans-serif, system-ui, -apple-system, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   background: radial-gradient(1200px 600px at 20% 0%, rgba(96,165,250,.18), transparent 60%),
               radial-gradient(900px 500px at 90% 10%, rgba(167,139,250,.12), transparent 55%),
               var(--bg);
@@ -20,24 +22,57 @@ body{
 
 .container{max-width:980px; margin:0 auto; padding:28px 18px;}
 .top{display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;}
+
 h1{font-size:2.1rem; margin:0 0 8px;}
+h2{margin:0 0 10px; font-size:1.3rem;}
+
 .subtitle{color:var(--muted); margin:0 0 6px;}
 .aka{color:var(--muted); margin:0;}
 
+/* ---------- Links (fix default blue) ---------- */
+a{
+  color:var(--accent);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:color .2s ease, border-color .2s ease;
+}
+
+a:hover{
+  color:#93c5fd;
+  border-bottom-color:rgba(147,197,253,.75);
+}
+
+a:visited{
+  color:#a78bfa;
+}
+
+a:focus-visible{
+  outline:2px solid rgba(96,165,250,.7);
+  outline-offset:3px;
+  border-radius:6px;
+}
+
+/* ---------- Navigation ---------- */
 .nav{
   display:flex; flex-wrap:wrap; gap:10px;
   margin-top:18px;
 }
+
 .nav a{
   color:var(--text);
-  text-decoration:none;
   padding:8px 12px;
   border:1px solid var(--border);
   border-radius:999px;
   background:rgba(255,255,255,.03);
+  border-bottom:none;
 }
-.nav a:hover{border-color:rgba(96,165,250,.5);}
 
+.nav a:hover{
+  border-color:rgba(96,165,250,.5);
+  color:var(--text);
+}
+
+/* ---------- Sections ---------- */
 .section{
   margin-top:26px;
   padding:18px;
@@ -47,24 +82,16 @@ h1{font-size:2.1rem; margin:0 0 8px;}
   backdrop-filter: blur(6px);
 }
 
-h2{margin:0 0 10px; font-size:1.3rem;}
-.card{
-  min-width:260px;
-  border:1px solid var(--border);
-  border-radius:16px;
-  background:rgba(255,255,255,.03);
-  padding:14px;
-}
-.card-title{color:var(--muted); font-size:.95rem; margin-bottom:10px;}
-.grid{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(120px,1fr));
+/* ---------- Chips ---------- */
+.chips{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-wrap:wrap;
   gap:10px;
 }
-.k{color:var(--muted); font-size:.85rem;}
-.v{font-weight:700; font-size:1.25rem;}
 
-.chips{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:10px;}
 .chips li{
   border:1px solid var(--border);
   padding:8px 10px;
@@ -72,18 +99,58 @@ h2{margin:0 0 10px; font-size:1.3rem;}
   background:rgba(255,255,255,.03);
 }
 
+/* ---------- Publications ---------- */
 .pub{padding:12px 0; border-top:1px solid var(--border);}
 .pub:first-of-type{border-top:none; padding-top:0;}
 .pub-title{font-weight:700;}
 .pub-authors{color:var(--muted);}
 .pub-meta{color:var(--muted); font-size:.95rem;}
 
+/* ---------- Expand Section ---------- */
 .more summary{
   cursor:pointer;
   color:var(--accent);
   margin-top:8px;
 }
-.list{margin:0; padding-left:18px; color:var(--text);}
-.note{color:var(--muted); margin-top:10px;}
 
-.footer{margin-top:22px; color:var(--muted); text-align:center;}
+/* ---------- Lists ---------- */
+.list{
+  margin:0;
+  padding-left:18px;
+}
+
+.list a{color:var(--accent);}
+.list a:hover{color:#93c5fd;}
+
+/* ---------- Cards (if used later) ---------- */
+.card{
+  min-width:260px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,.03);
+  padding:14px;
+}
+
+.card-title{color:var(--muted); font-size:.95rem; margin-bottom:10px;}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(120px,1fr));
+  gap:10px;
+}
+
+.k{color:var(--muted); font-size:.85rem;}
+.v{font-weight:700; font-size:1.25rem;}
+
+/* ---------- Footer ---------- */
+.footer{
+  margin-top:22px;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* ---------- Utility ---------- */
+.justify{
+  text-align:justify;
+  line-height:1.7;
+}
