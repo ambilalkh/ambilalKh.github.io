@@ -154,3 +154,31 @@ a:focus-visible{
   text-align:justify;
   line-height:1.7;
 }
+
+/* ---------- Header photo (top-right) ---------- */
+.header-flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+
+.header-text{ flex:1; }
+
+.profile-pic img{
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255,.12); /* matches your theme */
+  box-shadow:0 6px 14px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 720px){
+  .header-flex{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+
