@@ -1,6 +1,6 @@
 # bilalKh.github.io
 
-# Muhammad Bilal Khan — Personal Website
+# M. Bilal Khan — Personal Website
 
 
 
